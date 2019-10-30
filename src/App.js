@@ -6,29 +6,26 @@ import Modal from './Modal.js';
 
 class App extends Component {
   state = {
-    show: false
+    open: false
   };
-  showModal = e => {
-    this.setState({
-      show: true
-    });
+
+  onOpen = () => {
+    this.setState({open: true})
   };
+  
+  onClose = () => {
+    this.setState({open:false})
+  };
+
 render() {
- 
+ const { open } = this.state;
   return(
     <div>
     <h1>Awesome Dogs</h1>
-    <Modal show={this.state.show} />
     <div className = "container">
-      <Dogs className = "dogpic" onClick={e => {
-              this.showModal();
-         }}/>
-      <Dogs className = "dogpic" onClick={e => {
-              this.showModal();
-         }}/>
-      <Dogs className = "dogpic" onClick={e => {
-              this.showModal();
-         }}/>
+      <Dogs className = "dogpic"/>
+      <Dogs className = "dogpic"/>
+      <Dogs className = "dogpic"/>
     </div>
     </div>
   );
