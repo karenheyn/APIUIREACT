@@ -12,13 +12,11 @@ class Modal extends React.Component {
 }
     return (
     <div className = 'modal'>
-    <div><Dogs/></div>
-    <div>
-          <button className = "buttonmodal"
+    <button className = "buttonmodal"
             onClick={this.onClose}>
-            Close
+            X
           </button>
-          </div>
+    <div><Dogs/></div>
           </div>
         );
   }
