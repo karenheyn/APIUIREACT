@@ -8,10 +8,35 @@
   justify-content: space-between;
 }
 img{
-  height: 250px;
-  width: 250px;
-  padding: 20px;
+  padding: 40px;
+  max-height: 550px;
+  max-width: 550px;
+ 
+  
 }
 h1{
   text-align: center;
+}
+.body{
+  text-align: center;
+}
+.modal {
+  background-color: rgba(0, 0, 0, 0.109);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: auto;
+  border-radius: 8px;
+  height: 100%;
+  width: 100%;
+}
+
+.buttonfetch {
+  position: fixed;
+  margin-top: 30%;
+}
+.buttonmodal {
+  position: relative;
+  margin-top: 0px;
 }

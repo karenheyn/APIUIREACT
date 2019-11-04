@@ -1,32 +1,37 @@
 import React ,{Component} from 'react';
 import './App.css';
-import Dogs from './Breeds';
-import Modal from './Modal.js';
+// import Dogs from './Breeds';
+import Modal from './Modal';
 
+ 
 
 class App extends Component {
-  state = {
-    open: false
+  constructor (props) {
+    super(props)
+    this.state = {
+      show: false
+    }
+  }
+  showModal = e => {
+    this.setState({
+      show: !this.state.show
+    });
   };
 
-  onOpen = () => {
-    this.setState({open: true})
-  };
-  
-  onClose = () => {
-    this.setState({open:false})
-  };
-
+    
 render() {
- const { open } = this.state;
+ 
   return(
-    <div>
+    <div className= 'body'>
     <h1>Awesome Dogs</h1>
+    <button className = 'buttonfetch' onClick={e => {
+              this.showModal();
+         }}>New Pooch</button>
     <div className = "container">
-      <Dogs className = "dogpic"/>
-      <Dogs className = "dogpic"/>
-      <Dogs className = "dogpic"/>
+    
+    <Modal onClose={this.showModal} show = {this.state.show}/>
     </div>
+ 
     </div>
   );
 }
